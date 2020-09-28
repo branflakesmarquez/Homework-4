@@ -124,6 +124,7 @@ static list_t rotate_helper(list_t list, unsigned int n, list_t result) {
 }
 
 list_t rotate(list_t list, unsigned int n){
+   list_print(list);
    return rotate_helper(list, n, list_make());
 }
 
@@ -143,7 +144,7 @@ list_t insert_list(list_t first, list_t second, unsigned int n){
 
 static list_t chop_helper(list_t l, unsigned int n, list_t result) {
   if (n == 0) {
-    return l;
+    return reverse(l);
   } else {
     return chop_helper(list_rest(l), n - 1, list_make(list_first(l), result));
   }
@@ -155,7 +156,8 @@ list_t chop(list_t l, unsigned int n){
     // EFFECTS: returns the list equal to l without its last n
     //          elements
     */
-   return chop_helper(l, n, list_make());
+   list_t list_reversed = reverse(l);
+   return chop_helper(list_reversed, n, list_make());
 }
 
 int fib(int n){
