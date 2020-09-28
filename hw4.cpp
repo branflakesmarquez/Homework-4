@@ -117,8 +117,6 @@ list_t filter(list_t list, bool (*fn)(int)){
 
 static list_t rotate_helper(list_t list, unsigned int n, list_t result) {
   if(n == 0) {
-    list_print(list);
-    list_print(reverse(result));
     return append(list, reverse(result));
   } else {
     return rotate_helper(list_rest(list), n - 1, list_make(list_first(list), result));

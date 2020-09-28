@@ -72,7 +72,7 @@ int main() {
     list_print(rotate(original, 2));
     std::cout << endl;
     std::cout << "insert_list: ";
-    list_print(insert_list(testappend, testappend2, 3));
+    list_print(insert_list(testappend, testappend2, 8));
     std::cout << endl;
     std::cout << "chop: ";
     list_print(chop(original, 3));
